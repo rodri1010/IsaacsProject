@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the car!</description>
+	<objectName>the car</objectName>
+	<imagePath>./images/mystery1.jpg</imagePath>
+	<keyPath>./images/keys/mystery1.png</keyPath>
+	<hints>
+		<hint type="shape">You can see the top of the toy car.</hint>
+		<hint type="color">The car is blue.</hint>
+		<hint type="context">The car is near a whistle.</hint>
+		<hint type="location">The car is in the right half of the image.</hint>
+	</hints>
+</puzzle>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the puzzle piece!</description>
+	<objectName>the puzzle piece</objectName>
+	<imagePath>./images/ispy3.jpg</imagePath>
+	<keyPath>./images/keys/ispy3.png</keyPath>
+	<hints>
+		<hint type="shape">The piece is rotated so that it looks like a diamond.</hint>
+		<hint type="color">It's gray and yellow.</hint>
+		<hint type="context">It's got other objects hiding in the notches.</hint>
+		<hint type="location">It's in the right half of the image.</hint>
+	</hints>
+</puzzle>

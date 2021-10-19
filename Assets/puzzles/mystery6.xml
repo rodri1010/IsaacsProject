@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the diamond ring!</description>
+	<objectName>the diamond ring</objectName>
+	<imagePath>./images/mystery6.jpg</imagePath>
+	<keyPath>./images/keys/mystery6.png</keyPath>
+	<hints>
+		<hint type="shape">You can only see the top of the ring with the diamond.</hint>
+		<hint type="color">The ring is gold with a white diamond.</hint>
+		<hint type="context">The ring is near a cube with a 1 on it.</hint>
+		<hint type="location">The ring is near the top of the image.</hint>
+	</hints>
+</puzzle>

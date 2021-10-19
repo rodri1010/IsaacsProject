@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the paperclip!</description>
+	<objectName>the paperclip</objectName>
+	<imagePath>./images/ispy12.jpg</imagePath>
+	<keyPath>./images/keys/ispy12.png</keyPath>
+	<hints>
+		<hint type="shape">It looks like a normal paperclip.</hint>
+		<hint type="color">It's a yellow paperclip.</hint>
+		<hint type="context">It's resting on a boat.</hint>
+		<hint type="location">The paperclip is in the left half of the image.</hint>
+	</hints>
+</puzzle>

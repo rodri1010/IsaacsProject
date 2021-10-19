@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the anchor!</description>
+	<objectName>the anchor</objectName>
+	<imagePath>./images/ispy13.jpg</imagePath>
+	<keyPath>./images/keys/ispy13.png</keyPath>
+	<hints>
+		<hint type="shape">The anchor is just visible as an outline.</hint>
+		<hint type="color">The anchor is a black outline.</hint>
+		<hint type="context">The anchor is near a horse.</hint>
+		<hint type="location">The anchor is near the middle of the image.</hint>
+	</hints>
+</puzzle>

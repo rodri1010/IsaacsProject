@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the puppy!</description>
+	<objectName>the puppy</objectName>
+	<imagePath>./images/ispy9.jpg</imagePath>
+	<keyPath>./images/keys/ispy9.png</keyPath>
+	<hints>
+		<hint type="shape">The puppy is sitting down.</hint>
+		<hint type="color">The puppy is yellow.</hint>
+		<hint type="context">The puppy is painted onto a top.</hint>
+		<hint type="location">Look near the center of the image.</hint>
+	</hints>
+</puzzle>

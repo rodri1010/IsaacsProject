@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the rooster!</description>
+	<objectName>the rooster</objectName>
+	<imagePath>./images/mystery12.jpg</imagePath>
+	<keyPath>./images/keys/mystery12.png</keyPath>
+	<hints>
+		<hint type="shape">It looks like a side view of a rooster standing up.</hint>
+		<hint type="color">It's a golden rooster.</hint>
+		<hint type="context">The rooster is near a hot dog.</hint>
+		<hint type="location">It's in the left half of the image.</hint>
+	</hints>
+</puzzle>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the bird!</description>
+	<objectName>the bird</objectName>
+	<imagePath>./images/ispy7.jpg</imagePath>
+	<keyPath>./images/keys/ispy7.png</keyPath>
+	<hints>
+		<hint type="shape">It's a small bird that's facing to the left.</hint>
+		<hint type="color">The bird is yellow.</hint>
+		<hint type="context">It's hiding on a scarf.</hint>
+		<hint type="location">It's near the top of the image.</hint>
+	</hints>
+</puzzle>

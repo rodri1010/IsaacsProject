@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the fork!</description>
+	<objectName>the fork</objectName>
+	<imagePath>./images/ispy4.jpg</imagePath>
+	<keyPath>./images/keys/ispy4.png</keyPath>
+	<hints>
+		<hint type="shape">It's shaped like a normal fork, with four prongs.</hint>
+		<hint type="color">The fork is yellow.</hint>
+		<hint type="context">The fork is hiding underneath something else.</hint>
+		<hint type="location">The fork is near the bottom.</hint>
+	</hints>
+</puzzle>

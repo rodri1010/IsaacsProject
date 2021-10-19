@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the anchor!</description>
+	<objectName>the anchor</objectName>
+	<imagePath>./images/mystery8.jpg</imagePath>
+	<keyPath>./images/keys/mystery8.png</keyPath>
+	<hints>
+		<hint type="shape">The anchor looks like a T.</hint>
+		<hint type="color">The anchor is gold colored.</hint>
+		<hint type="context">It's near an hourglass.</hint>
+		<hint type="location">It's in the left half.</hint>
+	</hints>
+</puzzle>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the frog!</description>
+	<objectName>the frog</objectName>
+	<imagePath>./images/mystery9.jpg</imagePath>
+	<keyPath>./images/keys/mystery9.png</keyPath>
+	<hints>
+		<hint type="shape">The frog is in a crouched position.</hint>
+		<hint type="color">The frog is green.</hint>
+		<hint type="context">The frog is hiding in a tree.</hint>
+		<hint type="location">The frog is on the right side.</hint>
+	</hints>
+</puzzle>

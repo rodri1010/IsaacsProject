@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the cat!</description>
+	<objectName>the cat</objectName>
+	<imagePath>./images/ispy5.jpg</imagePath>
+	<keyPath>./images/keys/ispy5.png</keyPath>
+	<hints>
+		<hint type="shape">It's a cat stamped into clay.</hint>
+		<hint type="color">It's colored yellow.</hint>
+		<hint type="context">The cat is near some pipe cleaners.</hint>
+		<hint type="location">It's near the top of the image.</hint>
+	</hints>
+</puzzle>

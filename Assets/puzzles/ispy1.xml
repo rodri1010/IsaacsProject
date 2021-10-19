@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the rabbit!</description>
+	<objectName>the rabbit</objectName>
+	<imagePath>./images/ispy1.jpg</imagePath>
+	<keyPath>./images/keys/ispy1.png</keyPath>
+	<hints>
+		<hint type="shape">The rabbit is facing right.</hint>
+		<hint type="color">The rabbit is white.</hint>
+		<hint type="context">It's hiding behind a marble.</hint>
+		<hint type="location">It's on the left side of the image.</hint>
+	</hints>
+</puzzle>

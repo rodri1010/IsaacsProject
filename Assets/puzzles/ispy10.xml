@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the heart!</description>
+	<objectName>the heart</objectName>
+	<imagePath>./images/ispy10.jpg</imagePath>
+	<keyPath>./images/keys/ispy10.png</keyPath>
+	<hints>
+		<hint type="shape">The heart is printed on a coin.</hint>
+		<hint type="color">It's colored silver.</hint>
+		<hint type="context">The heart is near the pot lid.</hint>
+		<hint type="location">It's on the right side.</hint>
+	</hints>
+</puzzle>

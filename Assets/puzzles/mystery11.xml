@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the bird!</description>
+	<objectName>the bird</objectName>
+	<imagePath>./images/mystery11.jpg</imagePath>
+	<keyPath>./images/keys/mystery11.png</keyPath>
+	<hints>
+		<hint type="shape">The bird has its wings outstretched.</hint>
+		<hint type="color">The bird is black.</hint>
+		<hint type="context">The bird is outside the window.</hint>
+		<hint type="location">It's in the left half of the image.</hint>
+	</hints>
+</puzzle>

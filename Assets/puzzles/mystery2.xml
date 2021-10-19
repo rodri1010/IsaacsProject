@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the baseball player!</description>
+	<objectName>the baseball player</objectName>
+	<imagePath>./images/mystery2.jpg</imagePath>
+	<keyPath>./images/keys/mystery2.png</keyPath>
+	<hints>
+		<hint type="shape">The baseball player is preparing to swing a bat.</hint>
+		<hint type="color">The player is white and yellow.</hint>
+		<hint type="context">The baseball player is next to a tiger.</hint>
+		<hint type="location">The baseball player is in the second keyhole from the right.</hint>
+	</hints>
+</puzzle>

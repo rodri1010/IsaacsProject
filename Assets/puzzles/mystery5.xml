@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the spoon!</description>
+	<objectName>the spoon</objectName>
+	<imagePath>./images/mystery5.jpg</imagePath>
+	<keyPath>./images/keys/mystery5.png</keyPath>
+	<hints>
+		<hint type="shape">The spoon is resting flat.</hint>
+		<hint type="color">The spoon is metal colored.</hint>
+		<hint type="context">The spoon is resting on the top of a bucket.</hint>
+		<hint type="location">The spoon is on the right.</hint>
+	</hints>
+</puzzle>

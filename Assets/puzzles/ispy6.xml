@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the plane!</description>
+	<objectName>the plane</objectName>
+	<imagePath>./images/ispy6.jpg</imagePath>
+	<keyPath>./images/keys/ispy6.png</keyPath>
+	<hints>
+		<hint type="shape">It's a very small toy plane.</hint>
+		<hint type="color">The plane is white.</hint>
+		<hint type="context">A boy is holding the plane.</hint>
+		<hint type="location">The plane is in the right half of the image.</hint>
+	</hints>
+</puzzle>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the chair!</description>
+	<objectName>the chair</objectName>
+	<imagePath>./images/mystery3.jpg</imagePath>
+	<keyPath>./images/keys/mystery3.png</keyPath>
+	<hints>
+		<hint type="shape">The chair has a seat shaped like a circle.</hint>
+		<hint type="color">The chair is red.</hint>
+		<hint type="context">It's near a hammer.</hint>
+		<hint type="location">It's on the right.</hint>
+	</hints>
+</puzzle>

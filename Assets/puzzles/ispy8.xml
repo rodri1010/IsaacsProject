@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the horse!</description>
+	<objectName>the horse</objectName>
+	<imagePath>./images/ispy8.jpg</imagePath>
+	<keyPath>./images/keys/ispy8.png</keyPath>
+	<hints>
+		<hint type="shape">The horse is upside down.</hint>
+		<hint type="color">Only the horse's shadow can be seen.</hint>
+		<hint type="context">The horse is near a stick.</hint>
+		<hint type="location">The horse is in the left half.</hint>
+	</hints>
+</puzzle>

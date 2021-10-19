@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<puzzle>
+	<description>Find the lion!</description>
+	<objectName>the lion</objectName>
+	<imagePath>./images/ispy2.jpg</imagePath>
+	<keyPath>./images/keys/ispy2.png</keyPath>
+	<hints>
+		<hint type="shape">The lion is painted on a block.</hint>
+		<hint type="color">The lion is a black and white outline.</hint>
+		<hint type="context">It's near another cat.</hint>
+		<hint type="location">The lion is in the right half.</hint>
+	</hints>
+</puzzle>
