@@ -10,6 +10,7 @@ public class Click : MonoBehaviour
     Texture2D texture;
     Camera mainCamera;
     Dictionary<string, string> levels;
+    float time = 0.0f;
     void Start()
     {
       texture = GetComponent<SpriteRenderer>().sprite.texture;
@@ -20,10 +21,12 @@ public class Click : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      time += Time.deltaTime;
       if(Input.GetMouseButtonDown(0)){
         var myColor = new Color();
         GetSpritePixelColorUnderMousePointer(GetComponent<SpriteRenderer>(),out myColor);
         if(myColor[0] == 1 && myColor[1] == 1 && myColor[2] == 1){
+          Debug.Log(time);
           SceneManager.LoadScene(levels[GetComponent<SpriteRenderer>().sprite.name]);
         }
       }
