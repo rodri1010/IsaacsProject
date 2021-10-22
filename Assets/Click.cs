@@ -9,13 +9,12 @@ public class Click : MonoBehaviour
 {
     Texture2D texture;
     Camera mainCamera;
-    Dictionary<string, string> levels;
     float time = 0.0f;
     void Start()
     {
       texture = GetComponent<SpriteRenderer>().sprite.texture;
-      levels = new Dictionary<string, string>();
-      initializeDictionary();
+
+      // Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
@@ -26,11 +25,11 @@ public class Click : MonoBehaviour
         var myColor = new Color();
         GetSpritePixelColorUnderMousePointer(GetComponent<SpriteRenderer>(),out myColor);
         if(myColor[0] == 1 && myColor[1] == 1 && myColor[2] == 1){
-          Debug.Log(time);
-          SceneManager.LoadScene(levels[GetComponent<SpriteRenderer>().sprite.name]);
+          StartButton.levelNumber += 1;
+          Debug.Log(StartButton.levelNumber);
+          SceneManager.LoadScene(StartButton.levels[SceneManager.GetActiveScene().name]);
         }
       }
-
     }
     public bool GetSpritePixelColorUnderMousePointer(SpriteRenderer spriteRenderer, out Color color) {
          color = new Color();
@@ -54,12 +53,12 @@ public class Click : MonoBehaviour
              return false;
          }
          Plane plane = new Plane(transform.forward, transform.position);
-         float rayIntersectDist; 
-         if(!plane.Raycast(ray, out rayIntersectDist)) return false; 
+         float rayIntersectDist;
+         if(!plane.Raycast(ray, out rayIntersectDist)) return false;
          Vector3 spritePos = spriteRenderer.worldToLocalMatrix.MultiplyPoint3x4(ray.origin + (ray.direction * rayIntersectDist));
          Rect textureRect = sprite.textureRect;
          float pixelsPerUnit = sprite.pixelsPerUnit;
-         float halfRealTexWidth = texture.width * 0.5f; 
+         float halfRealTexWidth = texture.width * 0.5f;
          float halfRealTexHeight = texture.height * 0.5f;
          int texPosX = (int)(spritePos.x * pixelsPerUnit + halfRealTexWidth);
          int texPosY = (int)(spritePos.y * pixelsPerUnit + halfRealTexHeight);
@@ -69,29 +68,5 @@ public class Click : MonoBehaviour
          return true;
      }
 
-    public void initializeDictionary()
-    {
-      levels.Add("ispy1", "Level2");
-      levels.Add("ispy2", "Level3");
-      levels.Add("ispy3", "Level4");
-      levels.Add("ispy4", "Level5");
-      levels.Add("ispy5", "Level6");
-      levels.Add("ispy6", "Level7");
-      levels.Add("ispy7", "Level8");
-      levels.Add("ispy8", "Level9");
-      levels.Add("ispy9", "Level10");
-      levels.Add("ispy10", "Level11");
-      levels.Add("ispy11", "Level12");
-      levels.Add("ispy12", "Level13");
-      levels.Add("ispy13", "Level14");
-      levels.Add("mistery1", "Level15");
-      levels.Add("mistery2", "Level16");
-      levels.Add("mistery3", "Level17");
-      levels.Add("mistery4", "Level18");
-      levels.Add("mistery5", "Level19");
-      levels.Add("mistery6", "Level20");
-      levels.Add("mistery8", "Level21");
-      levels.Add("mistery9", "Level22");
-      levels.Add("mistery11", "Level23");
-    }
+
 }
