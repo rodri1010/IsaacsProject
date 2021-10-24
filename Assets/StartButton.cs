@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,10 @@ public class StartButton : MonoBehaviour
     public string[] levelsUnordered;
     public string[] levelsOrdered;
     public static int levelNumber = 0;
+    public static StreamWriter logWriter = null;
+    public string rootLogPath = "./";
+    public string logFilename = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,7 @@ public class StartButton : MonoBehaviour
                                       "Level19","Level20","Level21","Level22","Level23"};
       initializeDictionary();
       LoadXml("Assets/puzzles/ispy1.xml");
+      InitLog();
     }
 
     // Update is called once per frame
@@ -66,24 +72,49 @@ public class StartButton : MonoBehaviour
       xmlNames.Add("Level22","mistery11.xml");
       xmlNames.Add("Level23","mistery12.xml");
 
+      levels.Add("Level1","Level2");
+      levels.Add("Level2","Level3");
+      levels.Add("Level3","Level4");
+      levels.Add("Level4","Level5");
+      levels.Add("Level5","Level6");
+      levels.Add("Level6","Level7");
+      levels.Add("Level7","Level8");
+      levels.Add("Level8","Level9");
+      levels.Add("Level9","Level10");
+      levels.Add("Level10","Level11");
+      levels.Add("Level11","Level12");
+      levels.Add("Level12","Level13");
+      levels.Add("Level13","Level14");
+      levels.Add("Level14","Level15");
+      levels.Add("Level15","Level16");
+      levels.Add("Level16","Level17");
+      levels.Add("Level17","Level18");
+      levels.Add("Level18","Level19");
+      levels.Add("Level19","Level20");
+      levels.Add("Level20","Level21");
+      levels.Add("Level21","Level22");
+      levels.Add("Level22","Level23");
+      levels.Add("Level23","End");
 
-      Shuffle();
-      while(checkRepeated()){
-        Shuffle();
-      }
-      for (int i = 0; i < levelsUnordered.Length; i++)
-      {
-        levels.Add(levelsOrdered[i],levelsUnordered[i]);
-        Debug.Log(levelsOrdered[i] + " " + levelsUnordered[i]);
-      }
+
+      // Shuffle();
+      // while(checkRepeated()){
+      //   Shuffle();
+      // }
+      // for (int i = 0; i < levelsUnordered.Length; i++)
+      // {
+      //   levels.Add(levelsOrdered[i],levelsUnordered[i]);
+      //   Debug.Log(levelsOrdered[i] + " " + levelsUnordered[i]);
+      // }
+
     }
 
     public void Shuffle()
     {
          for (int i = 0; i < levelsUnordered.Length; i++) {
-             int rnd = Random.Range(0, levelsUnordered.Length);
+             int rnd = UnityEngine.Random.Range(0, levelsUnordered.Length);
              while(i == rnd){
-               rnd = Random.Range(0, levelsUnordered.Length);
+               rnd = UnityEngine.Random.Range(0, levelsUnordered.Length);
              }
              var tempGO = levelsUnordered[rnd];
              levelsUnordered[rnd] = levelsUnordered[i];
@@ -128,44 +159,17 @@ public class StartButton : MonoBehaviour
       return hints;
 
     }
+
+    private void InitLog()
+    {
+        if(logWriter == null)
+        {
+            logFilename = "IssacsProject_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
+            string logPath = Path.Combine(rootLogPath, logFilename);
+            logWriter = new StreamWriter(logPath);
+
+            // Write headers
+            logWriter.WriteLine("date, level, image, time");
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-Level 1 -> Level14 OK
-Level 2 -> Level16 OK
-Level 3 -> Level10
-Level 4 -> Level19
-Level 5 -> Level4
-Level 6 -> Level13
-Level 7 -> Level2 OK
-Level 8 -> Level5
-Level 9 -> Level8
-Level 10 -> Level6
-Level 11 -> Level9
-Level 12 -> Level11
-Level 13 -> Level18
-Level 14 -> Level17 OK
-Level 15 -> Level23 OK
-Level 16 -> Level15 OK
-Level 17 -> Level7 OK
-Level 18 -> Level21
-Level 19-> Level22
-Level 20 -> Level1 OK
-Level 21 -> Level3
-Level 22 -> Level12
-Level 23 -> Level20 OK
-
-*/

@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +15,6 @@ public class Click : MonoBehaviour
     void Start()
     {
       texture = GetComponent<SpriteRenderer>().sprite.texture;
-
       // Debug.Log(SceneManager.GetActiveScene().name);
     }
 
@@ -26,11 +27,13 @@ public class Click : MonoBehaviour
         GetSpritePixelColorUnderMousePointer(GetComponent<SpriteRenderer>(),out myColor);
         if(myColor[0] == 1 && myColor[1] == 1 && myColor[2] == 1){
           StartButton.levelNumber += 1;
-          Debug.Log(StartButton.levelNumber);
+          Log(SceneManager.GetActiveScene().name,texture.name,time.ToString("0.00") + " seconds");
           SceneManager.LoadScene(StartButton.levels[SceneManager.GetActiveScene().name]);
         }
       }
     }
+
+    
     public bool GetSpritePixelColorUnderMousePointer(SpriteRenderer spriteRenderer, out Color color) {
          color = new Color();
          Camera cam = Camera.main;
@@ -41,6 +44,8 @@ public class Click : MonoBehaviour
 
          return IntersectsSprite(spriteRenderer, ray, out color);
      }
+
+
      private bool IntersectsSprite(SpriteRenderer spriteRenderer, Ray ray, out Color color) {
          color = new Color();
          if(spriteRenderer == null) return false;
@@ -66,6 +71,32 @@ public class Click : MonoBehaviour
          if(texPosY < 0 || texPosY < textureRect.y || texPosY >= Mathf.FloorToInt(textureRect.yMax)) return false; // out of bounds
          color = texture.GetPixel(texPosX, texPosY);
          return true;
+     }
+
+
+
+
+     private void Log(params object[] args)
+     {
+         string line = string.Join(", ", args);
+         line = DateTime.Now.ToString("ddd MMM dd yyyy HH:mm:ss") + ", " + line;
+         Debug.Log(line);
+
+         if (StartButton.logWriter != null)
+         {
+             StartButton.logWriter.WriteLine(line);
+             StartButton.logWriter.Flush();
+         }
+     }
+
+     private void CloseLog()
+     {
+         if (StartButton.logWriter != null)
+         {
+             StartButton.logWriter.Flush();
+             StartButton.logWriter.Close();
+             StartButton.logWriter = null;
+         }
      }
 
 
