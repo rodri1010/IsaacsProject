@@ -61,16 +61,16 @@ public class StartButton : MonoBehaviour
       xmlNames.Add("Level11","ispy11.xml");
       xmlNames.Add("Level12","ispy12.xml");
       xmlNames.Add("Level13","ispy13.xml");
-      xmlNames.Add("Level14","mistery1.xml");
-      xmlNames.Add("Level15","mistery2.xml");
-      xmlNames.Add("Level16","mistery3.xml");
-      xmlNames.Add("Level17","mistery4.xml");
-      xmlNames.Add("Level18","mistery5.xml");
-      xmlNames.Add("Level19","mistery6.xml");
-      xmlNames.Add("Level20","mistery8.xml");
-      xmlNames.Add("Level21","mistery9.xml");
-      xmlNames.Add("Level22","mistery11.xml");
-      xmlNames.Add("Level23","mistery12.xml");
+      xmlNames.Add("Level14","mystery1.xml");
+      xmlNames.Add("Level15","mystery2.xml");
+      xmlNames.Add("Level16","mystery3.xml");
+      xmlNames.Add("Level17","mystery4.xml");
+      xmlNames.Add("Level18","mystery5.xml");
+      xmlNames.Add("Level19","mystery6.xml");
+      xmlNames.Add("Level20","mystery8.xml");
+      xmlNames.Add("Level21","mystery9.xml");
+      xmlNames.Add("Level22","mystery11.xml");
+      xmlNames.Add("Level23","mystery12.xml");
 
       levels.Add("Level1","Level2");
       levels.Add("Level2","Level3");
