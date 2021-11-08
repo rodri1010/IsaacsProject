@@ -8,10 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-    public static Dictionary<string, string> levels;
     public static Dictionary<string, string> xmlNames;
-    public string[] levelsUnordered;
-    public string[] levelsOrdered;
+    public static string[] levels;
     public static int levelNumber = 0;
     public static StreamWriter logWriter = null;
     public string rootLogPath = "./";
@@ -20,16 +18,10 @@ public class StartButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      levels = new Dictionary<string, string>();
       xmlNames = new Dictionary<string,string>();
-      levelsUnordered = new string[] { "Level1","Level2","Level3","Level4","Level5","Level6",
-                                      "Level7","Level8","Level9","Level10","Level11","Level12",
+      levels = new string[] { "Level1","Level2","Level3","Level4","Level5","Level6","Level8","Level11","Level12",
                                       "Level13","Level14","Level15","Level16","Level17","Level18",
-                                      "Level19","Level20","Level21","Level22","Level23"};
-      levelsOrdered = new string[] { "Level1","Level2","Level3","Level4","Level5","Level6",
-                                      "Level7","Level8","Level9","Level10","Level11","Level12",
-                                      "Level13","Level14","Level15","Level16","Level17","Level18",
-                                      "Level19","Level20","Level21","Level22","Level23"};
+                                      "Level19","Level20","Level22"};
       initializeDictionary();
       LoadXml("Assets/puzzles/ispy1.xml");
       InitLog();
@@ -43,7 +35,7 @@ public class StartButton : MonoBehaviour
 
     public void RegisterClick()
     {
-      SceneManager.LoadScene("Level1");
+      SceneManager.LoadScene(levels[0]);
     }
 
     public void initializeDictionary()
@@ -72,65 +64,26 @@ public class StartButton : MonoBehaviour
       xmlNames.Add("Level22","mystery11.xml");
       xmlNames.Add("Level23","mystery12.xml");
 
-      levels.Add("Level1","Level2");
-      levels.Add("Level2","Level3");
-      levels.Add("Level3","Level4");
-      levels.Add("Level4","Level5");
-      levels.Add("Level5","Level6");
-      levels.Add("Level6","Level7");
-      levels.Add("Level7","Level8");
-      levels.Add("Level8","Level9");
-      levels.Add("Level9","Level10");
-      levels.Add("Level10","Level11");
-      levels.Add("Level11","Level12");
-      levels.Add("Level12","Level13");
-      levels.Add("Level13","Level14");
-      levels.Add("Level14","Level15");
-      levels.Add("Level15","Level16");
-      levels.Add("Level16","Level17");
-      levels.Add("Level17","Level18");
-      levels.Add("Level18","Level19");
-      levels.Add("Level19","Level20");
-      levels.Add("Level20","Level21");
-      levels.Add("Level21","Level22");
-      levels.Add("Level22","Level23");
-      levels.Add("Level23","End");
 
 
-      // Shuffle();
-      // while(checkRepeated()){
-      //   Shuffle();
-      // }
-      // for (int i = 0; i < levelsUnordered.Length; i++)
-      // {
-      //   levels.Add(levelsOrdered[i],levelsUnordered[i]);
-      //   Debug.Log(levelsOrdered[i] + " " + levelsUnordered[i]);
-      // }
+      Shuffle();
 
     }
 
     public void Shuffle()
     {
-         for (int i = 0; i < levelsUnordered.Length; i++) {
-             int rnd = UnityEngine.Random.Range(0, levelsUnordered.Length);
+         for (int i = 0; i < levels.Length; i++) {
+             int rnd = UnityEngine.Random.Range(0, levels.Length);
              while(i == rnd){
-               rnd = UnityEngine.Random.Range(0, levelsUnordered.Length);
+               rnd = UnityEngine.Random.Range(0, levels.Length);
              }
-             var tempGO = levelsUnordered[rnd];
-             levelsUnordered[rnd] = levelsUnordered[i];
-             levelsUnordered[i] = tempGO;
+             var tempGO = levels[rnd];
+             levels[rnd] = levels[i];
+             levels[i] = tempGO;
          }
     }
 
 
-    public bool checkRepeated(){
-      for(int i = 0;i<levelsUnordered.Length; i++){
-        if(levelsOrdered[i] == levelsUnordered[i]){
-          return true;
-        }
-      }
-      return false;
-    }
 
 
 
