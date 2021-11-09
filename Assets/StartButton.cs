@@ -19,11 +19,10 @@ public class StartButton : MonoBehaviour
     void Start()
     {
       xmlNames = new Dictionary<string,string>();
-      levels = new string[] { "Level1","Level2","Level3","Level4","Level5","Level6","Level8","Level11","Level12",
+      levels = new string[] { "Level1","Level2","Level3","Level4","Level5","Level8","Level10","Level11","Level12",
                                       "Level13","Level14","Level15","Level16","Level17","Level18",
                                       "Level19","Level20","Level22"};
       initializeDictionary();
-      LoadXml("Assets/puzzles/ispy1.xml");
       InitLog();
     }
 

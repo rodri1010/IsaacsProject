@@ -20,8 +20,8 @@ public class SetUpScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      var path = "Assets/puzzles/";
-      info = StartButton.LoadXml(path + StartButton.xmlNames[SceneManager.GetActiveScene().name]);
+      var path = Application.streamingAssetsPath;
+      info = StartButton.LoadXml(path + "/" + StartButton.xmlNames[SceneManager.GetActiveScene().name]);
       shapeButton.onClick.AddListener(ShapeHint);
       colorButton.onClick.AddListener(ColorHint);
       locationButton.onClick.AddListener(LocationHint);

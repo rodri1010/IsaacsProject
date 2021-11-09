@@ -19,7 +19,7 @@ public class ImportXML : MonoBehaviour
     {
       XmlDocument doc = new XmlDocument();
       doc.Load(path);
-      string description = doc.SelectSingleNode("puzzle/description/text()").Value;
+      string description = doc.SelectSingleNode("StreamingAssets/description/text()").Value;
       Debug.Log(description);
 
 
