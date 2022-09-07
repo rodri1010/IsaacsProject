@@ -25,15 +25,16 @@ public class Click : MonoBehaviour
       if(Input.GetMouseButtonDown(0)){
         var myColor = new Color();
         GetSpritePixelColorUnderMousePointer(GetComponent<SpriteRenderer>(),out myColor);
+        Debug.Log(myColor);
         if(myColor[0] == 1 && myColor[1] == 1 && myColor[2] == 1){
-          StartButton.levelNumber += 1;
-          Log(SceneManager.GetActiveScene().name,texture.name,time.ToString("0.00") + " seconds");
-          if(StartButton.levelNumber < 18){
-            SceneManager.LoadScene(StartButton.levels[StartButton.levelNumber]);
-          }
-          else{
-            SceneManager.LoadScene("End");
-          }
+          //StartButton.levelNumber += 1;
+          //Log(SceneManager.GetActiveScene().name,texture.name,time.ToString("0.00") + " seconds");
+          //if(StartButton.levelNumber < 18){
+          //  SceneManager.LoadScene(StartButton.levels[StartButton.levelNumber]);
+          //}
+          //else{
+          //  SceneManager.LoadScene("End");
+          //}
         }
       }
     }
