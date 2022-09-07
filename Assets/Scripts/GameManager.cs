@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         // TheScript.SendData("{\"type\":\"updateGame\", \"pid\":\"" + pid + "\",  \"level\":" + level +", \"group\":" + group + ", \"gender\":" + gender + "}");
         prepScene.gameObject.SetActive(false);
         startScene.gameObject.SetActive(true);
+        InitLog();
     }
 
     public void AddMessage(string message)
@@ -179,18 +180,82 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void InitLog()
+
+    //Group 0: Female1, Female2, Female3, Female4
+    //Group 1: Female2, Female4, Female1, Female3
+    //Group 2: Female4, Female3, Female2, Female1
+    //Group 3: Female3, Female1, Female4, Female2
+
+    // female1;   Looking at small
+    // female2;   Looking with small
+    // female3;   Looking with sitting
+    // female4;   Looking with standing
+
+    public string GetCurAgentName()
+    {
+        if(this.group == 0)
+        {
+            string[] agents = this.gender == 1? new string[] {"LookingAtFemale","LookingWithSmallFemale","LookingWithSittingFemale","LookingWithStandingFemale"} : new string[] {"LookingAtMale","LookingWithSmallMale","LookingWithSittingMale","LookingWithStandingMale"};
+            return agents[this.level/5];
+        }
+        else if(this.group == 1)
+        {
+            string[] agents = this.gender == 1? new string[] {"LookingWithSmallFemale","LookingWithStandingFemale","LookingAtFemale","LookingWithSittingFemale"} : new string[] {"LookingWithSmallMale","LookingWithStandingMale","LookingAtMale","LookingWithSittingMale"};
+            return agents[this.level/5];
+
+        }
+        else if(this.group == 2)
+        {
+            string[] agents = this.gender == 1? new string[] {"LookingWithStandingFemale","LookingWithSittingFemale","LookingWithSmallFemale","LookingAtFemale"} : new string[] {"LookingWithStandingMale","LookingWithSittingMale","LookingWithSmallMale","LookingAtMale"};
+            return agents[this.level/5];
+
+        }
+        else if(this.group == 3)
+        {
+            string[] agents = this.gender == 1? new string[] {"LookingWithSittingFemale","LookingAtFemale","LookingWithStandingFemale","LookingWithSmallFemale"} : new string[] {"LookingWithSittingMale","LookingAtMale","LookingWithStandingMale","LookingWithSmallMale"};
+            return agents[this.level/5];
+        }
+        else
+        {
+            return "Not found";
+        }
+    }
+
+    public void InitLog()
     {
         if(logWriter == null)
         {
-            logFilename = "IssacsProject_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
+            logFilename = "SideBySideAgents_PID_" + this.pid.ToString() + "_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".txt";
             string logPath = Path.Combine(rootLogPath, logFilename);
             logWriter = new StreamWriter(logPath);
 
             // Write headers
-            logWriter.WriteLine("date, level, image, time");
+            logWriter.WriteLine("date, level, image, agent, timeToComplete, skipped");
         }
     }
+
+    public void Log(params object[] args)
+     {
+         string line = string.Join(", ", args);
+         line = DateTime.Now.ToString("ddd MMM dd yyyy HH:mm:ss") + ", " + line;
+
+         if (logWriter != null)
+         {
+             logWriter.WriteLine(line);
+             logWriter.Flush();
+         }
+     }
+
+     public void CloseLog()
+     {
+         if (logWriter != null)
+         {
+             logWriter.Flush();
+             logWriter.Close();
+             logWriter = null;
+         }
+     }
+
 
     public static Dictionary<string, string> LoadXml(string path)
     {

@@ -91,6 +91,7 @@ public class LevelScene : MonoBehaviour
 
     public void CorrectClick(bool skippedLevel = false)
     {
+        GameManager.Log((GameManager.level + 1).ToString(), levels[GameManager.level], GameManager.GetCurAgentName(), curLevelTime.ToString("0.00"), skippedLevel.ToString());
         if(GameManager.level < 20)
         {
             if(skippedLevel)
