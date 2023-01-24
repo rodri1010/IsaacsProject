@@ -10,15 +10,23 @@ agent: Small agent looking with participant
 ./puzzles/ispy1.xml
 ./puzzles/ispy9.xml
 ./puzzles/ispy6.xml
-agent: Big agent sitting
-./puzzles/mystery9.xml
+agent: Big agent standing
+./puzzles/mystery1.xml
 ./puzzles/mystery12.xml
 ./puzzles/ispy11.xml
 ./puzzles/mystery6.xml
 ./puzzles/ispy8.xml
-agent: Big agent standing
-./puzzles/mystery4.xml
+agent: Big agent sitting
+./puzzles/mystery8.xml
 ./puzzles/ispy5.xml
 ./puzzles/ispy13.xml
-./puzzles/ispy10.xml
+./puzzles/mystery4.xml
 ./puzzles/ispy12.xml
+
+
+
+Other Info
+Small agent looking at participant  == Group A or 0
+Small agent looking with participant  == Group B or 1
+Big agent sitting  == Group C or 2
+Big agent standing  == Group D or 3

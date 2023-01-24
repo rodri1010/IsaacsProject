@@ -39,8 +39,8 @@ public class LevelScene : MonoBehaviour
     {
         levels = new string[] {"mystery2","ispy3","mystery3","ispy2","mystery5",
                                 "mystery11","ispy4","ispy1","ispy9","ispy6",
-                                "mystery9","mystery12","ispy11","mystery6","ispy8",
-                                "mystery4","ispy5","ispy13","ispy10","ispy12"};
+                                "mystery1","mystery12","ispy11","mystery6","ispy8",
+                                "mystery8","ispy5","ispy13","mystery4","ispy12"};
 
         TheClientController = GameObject.Find("Client");
         Client = TheClientController.GetComponent<UdpSocket>();
@@ -91,8 +91,14 @@ public class LevelScene : MonoBehaviour
 
     public void CorrectClick(bool skippedLevel = false)
     {
+        Debug.Log(GameManager.level);
         GameManager.Log((GameManager.level + 1).ToString(), levels[GameManager.level], GameManager.GetCurAgentName(), curLevelTime.ToString("0.00"), skippedLevel.ToString());
-        if(GameManager.level < 20)
+        if(GameManager.level == 19)
+        {
+            GameManager.SendIntent("end");
+            GameManager.TransitionToEndScene();
+        }
+        if(GameManager.level < 19)
         {
             if(skippedLevel)
             {   
@@ -112,8 +118,9 @@ public class LevelScene : MonoBehaviour
             title.GetComponent<TMP_Text>().text = info["description"];
             curLevelTime = 0f;
 
+
             if(GameManager.level % 5 != 0 && GameManager.level != 20)
-            {
+            {    
                 GameManager.SendIntent("start");
             }
             panel.SetActive(true);
@@ -130,11 +137,7 @@ public class LevelScene : MonoBehaviour
         {
             GameManager.TransitionToTransitionScene();
         }
-        else if(GameManager.level == 19)
-        {
-            GameManager.TransitionToEndScene();
-        }
-
+        
         // Send info to server or to log file.
 
     }

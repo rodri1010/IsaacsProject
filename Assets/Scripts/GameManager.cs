@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
     {
         levels = new string[] {"mystery2","ispy3","mystery3","ispy2","mystery5",
                                 "mystery11","ispy4","ispy1","ispy9","ispy6",
-                                "mystery9","mystery12","ispy11","ispy7","ispy8",
-                                "mystery4","ispy5","ispy13","ispy10","ispy12"};
+                                "mystery1","mystery12","ispy11","mystery6","ispy8",
+                                "mystery8","ispy5","ispy13","mystery4","ispy12"};
         transitionSceneOn = true;
         TheGameController = GameObject.Find("Client");
         TheScript = TheGameController.GetComponent<UdpSocket>();
@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
         this.transitionSceneOn = false;
         AddMessage("{\"type\":\"updateGame\", \"pid\":\"" + this.pid + "\",  \"level\":" + this.level +", \"group\":" + this.group + ", \"gender\":" + this.gender + "}");
         //TheScript.SendData("{\"type\":\"updateGame\", \"pid\":\"" + this.pid + "\",  \"level\":" + this.level +", \"group\":" + this.group + ", \"gender\":" + this.gender + "}");
+        SendIntent("greeting");
         SendIntent("start");
         //Send message to server
     }
@@ -130,6 +131,7 @@ public class GameManager : MonoBehaviour
             levelScene.gameObject.SetActive(true);
             transitionScene.gameObject.SetActive(false);
         }
+        SendIntent("greeting");
         SendIntent("start");
         
         // Probably send message or log here
@@ -195,24 +197,24 @@ public class GameManager : MonoBehaviour
     {
         if(this.group == 0)
         {
-            string[] agents = this.gender == 1? new string[] {"LookingAtFemale","LookingWithSmallFemale","LookingWithSittingFemale","LookingWithStandingFemale"} : new string[] {"LookingAtMale","LookingWithSmallMale","LookingWithSittingMale","LookingWithStandingMale"};
+            string[] agents = this.gender == 1? new string[] {"LookingAtFemale","LookingWithSmallFemale","LookingWithStandingFemale", "LookingWithSittingFemale"} : new string[] {"LookingAtMale","LookingWithSmallMale","LookingWithStandingMale","LookingWithSittingMale"};
             return agents[this.level/5];
         }
         else if(this.group == 1)
         {
-            string[] agents = this.gender == 1? new string[] {"LookingWithSmallFemale","LookingWithStandingFemale","LookingAtFemale","LookingWithSittingFemale"} : new string[] {"LookingWithSmallMale","LookingWithStandingMale","LookingAtMale","LookingWithSittingMale"};
+            string[] agents = this.gender == 1? new string[] {"LookingWithSmallFemale","LookingWithSittingFemale","LookingAtFemale","LookingWithStandingFemale"} : new string[] {"LookingWithSmallMale","LookingWithSittingMale","LookingAtMale","LookingWithStandingMale"};
             return agents[this.level/5];
 
         }
         else if(this.group == 2)
         {
-            string[] agents = this.gender == 1? new string[] {"LookingWithStandingFemale","LookingWithSittingFemale","LookingWithSmallFemale","LookingAtFemale"} : new string[] {"LookingWithStandingMale","LookingWithSittingMale","LookingWithSmallMale","LookingAtMale"};
+            string[] agents = this.gender == 1? new string[] {"LookingWithSittingFemale","LookingWithStandingFemale","LookingWithSmallFemale","LookingAtFemale"} : new string[] {"LookingWithSittingMale","LookingWithStandingMale","LookingWithSmallMale","LookingAtMale"};
             return agents[this.level/5];
 
         }
         else if(this.group == 3)
         {
-            string[] agents = this.gender == 1? new string[] {"LookingWithSittingFemale","LookingAtFemale","LookingWithStandingFemale","LookingWithSmallFemale"} : new string[] {"LookingWithSittingMale","LookingAtMale","LookingWithStandingMale","LookingWithSmallMale"};
+            string[] agents = this.gender == 1? new string[] {"LookingWithStandingFemale","LookingAtFemale","LookingWithSittingFemale","LookingWithSmallFemale"} : new string[] {"LookingWithStandingMale","LookingAtMale","LookingWithSittingMale","LookingWithSmallMale"};
             return agents[this.level/5];
         }
         else
